@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>web login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<script src="//cdn.bootcss.com/jquery/3.1.0/jquery.slim.min.js"></script>
+    <script>
+	function fullHeight(){
+		$(".tab-pane active").style.height="100%";
+		alert("test");
+	
+	}
+        //显示本页面，隐藏其他页面
+        function change(obj) {
+            var name = obj.getAttribute("name");
+            var array = document.getElementById("page").childNodes;
+            for (var i = 1; i < ((array.length) * 2) + 1; i += 2) {
+                if (array[i].getAttribute("name") == name) {
+                    array[i].setAttribute("class", "tab-pane active");
+                }
+                else {
+                    array[i].setAttribute("class", "tab-pane");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="tabbable tabs-below" id="tabs-364546">
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#" onclick="change(this)" name="home" data-toggle="tab">Home</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="change(this)" name="fees" data-toggle="tab">Fees</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="change(this)" name="login" data-toggle="tab">Login</a>
+                    </li>
+                </ul>
+                <div  class="tab-content" id="page">
+                    <div class="tab-pane active" id="panel1" name="home">
+                        <div>
+                            <iframe style="height:1000px" class="framepage" src="home.html"> </iframe>
+                        </div>
+                    </div>
+                   <div class="tab-pane" id="panel2" name="fees">
+                        <div>
+			<iframe style="height:1000px" class="framepage" src="fees.php"> </iframe>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="panel3" name="login">
+                        <div>
+			<iframe style="height:1000px" class="framepage" src="login.html"> </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
